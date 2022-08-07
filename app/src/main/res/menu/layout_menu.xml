@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/gridView"
+        android:icon="@drawable/menu2"
+        android:title="LinearView Horizontal"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/linearViewVertical"
+        android:icon="@drawable/menu1"
+        android:title="LinearView Vertical"
+        app:showAsAction="always"></item>
+
+    <item
+        android:id="@+id/shoppingCart"
+        android:icon="@drawable/shopping_cart"
+        app:showAsAction="always"></item>
+
+</menu>

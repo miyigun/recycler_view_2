@@ -57,12 +57,12 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/deleteBook"
+                android:id="@+id/buyBook"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/trash" />
+                android:src="@drawable/add_shopping_cart" />
 
         </LinearLayout>
 

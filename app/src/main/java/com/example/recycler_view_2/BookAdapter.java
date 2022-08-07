@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> 
 
     ArrayList<BookModel> eBookList;
     LayoutInflater inflater;
+    Context context;
 
     public BookAdapter(Context context, ArrayList<BookModel> books) {
         inflater = LayoutInflater.from(context);
@@ -44,33 +46,35 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView bookName, writer;
-        ImageView bookImage, deleteBook;
+        ImageView bookImage, addShoppingCart;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             bookName = (TextView) itemView.findViewById(R.id.bookName);
             writer = (TextView) itemView.findViewById(R.id.bookWriter);
             bookImage = (ImageView) itemView.findViewById(R.id.bookImage);
-            deleteBook = (ImageView) itemView.findViewById(R.id.deleteBook);
-            deleteBook.setOnClickListener(this);
+            addShoppingCart = (ImageView) itemView.findViewById(R.id.buyBook);
+            addShoppingCart.setOnClickListener(this);
 
         }
 
-        public void setData(BookModel selectedProduct, int position) {
+        public void setData(BookModel selectedBook, int position) {
 
-            this.bookName.setText(selectedProduct.getBookName());
-            this.writer.setText(selectedProduct.getWriter());
-            this.bookImage.setImageResource(selectedProduct.getBookImageId());
+            this.bookName.setText(selectedBook.getBookName());
+            this.writer.setText(selectedBook.getWriter());
+            this.bookImage.setImageResource(selectedBook.getBookImageId());
 
         }
 
 
         @Override
         public void onClick(View v) {
-
-
+            if (v == addShoppingCart) {
+                System.out.println("Book "+(getLayoutPosition()+1)+" selected");
+            }
         }
 
-
     }
+
+
 }
